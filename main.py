@@ -15,7 +15,7 @@ def delete_line(fname: str, targetLine: int) -> None:
 
 	lines.pop(targetLine)
 
-	with open(fanme, 'w') as file:
+	with open(fname, 'w') as file:
 		file.writelines(lines)
 
 
@@ -43,7 +43,7 @@ def main():
 		time.sleep(interval)
 		lineCount = get_line_count(fname)
 
-		targetLine = random.randrange(0, lineCount)
+		targetLine = random.randint(0, lineCount - 1)
 		delete_line(fname, targetLine)
 
 if __name__ == '__main__':
